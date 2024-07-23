@@ -12,3 +12,6 @@ export const sendToken = (user, res, message, stausCode = 200) => {
     })
     .json({ success: true, message: message });
 };
+
+// "start": "set NODE_ENV=Production && node server.js",
+// "dev": " set NODE_ENV=Development && nodemon server.js"
