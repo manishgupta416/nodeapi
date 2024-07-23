@@ -11,6 +11,6 @@ export const errMiddleware = (err, req, res, next) => {
     message: err.message,
   });
 };
-export default ErrorHandler;
+// export default ErrorHandler;
 //note while deploying keep in mind it will not work  because of cors ,
 //backed wrl and frontend url will different thats why

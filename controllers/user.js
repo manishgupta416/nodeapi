@@ -62,7 +62,11 @@ export const getMyDetails = (req, res) => {
 export const logout = (req, res) => {
   res
     .status(200)
-    .cookie("token", "", { expires: new Date(Date.now()) })
+    .cookie("token", "", {
+      expires: new Date(Date.now()),
+      sameSite: process.env.NODE_ENV === "Development" ? "lax" : none, // because of both front and backed url on different url
+      secure: process.env.NODE_ENV === "Development" ? false : true,
+    })
     .json({
       success: true,
       user: req.user,
